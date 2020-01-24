@@ -5,6 +5,8 @@ def load_library(file_path)
   emoticon_data = YAML.load_file(file_path)
   emoticon_data_with_get_meaning_and_get_emoticon = {}
   
+  pp emoticon_data
+  
   meanings = {}
   emoticon_data.each { |emoticon_meaning, en_and_jp_emoticons| 
     jp_emoticon = en_and_jp_emoticons[1]
@@ -32,3 +34,6 @@ end
 def get_english_meaning(file_path, jp_emoticon)
   load_library(file_path)[:get_meaning][jp_emoticon] || "Sorry, that emoticon was not found"
 end
+
+
+load_library('lib/emoticons.yml')
