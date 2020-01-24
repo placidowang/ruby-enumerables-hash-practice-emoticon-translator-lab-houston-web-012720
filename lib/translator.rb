@@ -32,6 +32,3 @@ end
 def get_english_meaning(file_path, jp_emoticon)
   load_library(file_path)[:get_meaning][jp_emoticon] || "Sorry, that emoticon was not found"
 end
-
-# p get_japanese_emoticon('lib/emoticons.yml', ":)")
-# pp load_library('lib/emoticons.yml')
